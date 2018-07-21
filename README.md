@@ -1,6 +1,22 @@
-frontend-nanodegree-arcade-game
-===============================
+# UDACITY Front-End Nanodegree Classic Arcade Game
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+In my Front End Udacity nanodegree, I had this project of a classic arcade game. The character has to pass through the grass and road and reach to the water without touching to the bugs who are passing through the road randomly. If the character touches to any bug, it directly goes back to the beginning point. After reaching the water, the character is again goes back to the beginning.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+
+## Installing:
+
+1. Clone the game from repo
+
+2. Load index.html in browser.
+
+3. Play the game
+
+
+## How to Play:
+The goal is to match is to reach to the water.
+
+1. User has to use arrow keys on the keyboard in order to move up, down, left or right.
+
+2. While moving through the water, user should avoid touching the bugs who are passing through randomly.
+
+3. Once the user reaches to the water, or touches to any bug the position of the character sets back to the initial point.
