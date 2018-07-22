@@ -1,5 +1,6 @@
+// 'use strict';
 // Enemies our player must avoid
-var Enemy = function(x, y, speed) {
+const Enemy = function(x, y, speed) {
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     // x and y (for the axis) sets the enemies initial location
@@ -31,8 +32,7 @@ Enemy.prototype.update = function(dt) {
     // position.
 
     if(player.x < this.x + 80 && player.x + 80 > this.x && player.y < this.y + 60 && player.y + 60 > this.y) {
-      player.x = 202;
-      player.y = 405;
+      player.reset();
     }
 };
 
@@ -47,7 +47,7 @@ Enemy.prototype.render = function() {
 // a handleInput() method.
 
 // Player class function
-var Player = function (x, y) {
+const Player = function (x, y) {
   // The image/player for our player, this uses
   // a helper we've provided to easily load images
   // x and y (for the axis) sets the players initial location
@@ -57,7 +57,12 @@ var Player = function (x, y) {
 };
 
 Player.prototype.update = function(dt) {
-}
+};
+
+Player.prototype.reset = function() {
+  this.x = 202;
+  this.y = 405;
+};
 
 // Draw the player on the screen, required method for game
 Player.prototype.render = function() {
@@ -66,19 +71,20 @@ Player.prototype.render = function() {
 
 Player.prototype.handleInput = function(keyPress) {
   if(keyPress == 'left' && this.x > 0) {
-    this.x -= 120;
+    this.x -= 102;
   }
   if(keyPress == 'right' && this.x < 405) {
-    this.x += 120;
+    this.x += 102;
   }
   if(keyPress == 'up' && this.y > 0) {
     this.y -= 83;
   }
-  if(keyPress == 'down' && this.y < 0) {
+  if(keyPress == 'down' && this.y < 405) {
     this.y += 83;
   }
   if(this.y < 0) {
-    setTimeout(function() {player.x = 202; player.y = 405;
+    setTimeout(() => {
+      this.reset();
     }, 500);
   }
 }
